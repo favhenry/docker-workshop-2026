@@ -1,38 +1,53 @@
-ASSIGNMENT SOLUTION SQL CODE 
+# Data Engineering Zoomcamp 2026 – Week 1 Homework
 
+Module 1: Docker, PostgreSQL, Terraform & Data Ingestion
 
-Question 3. Counting short trips
+This repository contains my solutions for Week 1 homework questions using the NYC Green Taxi dataset loaded into PostgreSQL.
 
-For the trips in November 2025 (lpep_pickup_datetime between '2025-11-01' and '2025-12-01', exclusive of the upper bound), how many trips had a trip_distance of less than or equal to 1 mile?
+## Assignment Solutions – SQL Queries
 
+### Question 3: Counting short trips
 
+**Question:** For the trips in November 2025 (`lpep_pickup_datetime` between '2025-11-01' and '2025-12-01', exclusive of the upper bound), how many trips had a `trip_distance` of less than or equal to 1 mile?
+
+```sql
 SELECT COUNT(*) 
-FROM green_taxi_trips
-WHERE lpep_pickup_datetime >= '2025-11-01 00:00:00'
-  AND lpep_pickup_datetime <  '2025-12-01 00:00:00'
+FROM green_taxi_trips 
+WHERE lpep_pickup_datetime >= '2025-11-01 00:00:00' 
+  AND lpep_pickup_datetime < '2025-12-01 00:00:00' 
   AND trip_distance <= 1;
 
-Question 4. Longest trip for each day
+```
+**Answer:**
+**8002 short trips**
 
-Which was the pick up day with the longest trip distance? Only consider trips with trip_distance less than 100 miles (to exclude data errors).
+### Question 4: Longest trip for each day
 
+**Question:** Which was the pick up day with the longest trip distance? Only consider trips with trip_distance less than 100 miles (to exclude data errors).
+
+```sql
 SELECT 
-    DATE(lpep_pickup_datetime) AS pickup_day,
-    MAX(trip_distance) AS max_trip_distance
-FROM green_taxi_trips
-WHERE 
-    trip_distance <= 100
-    AND trip_distance > 0  -- optional: exclude 0-distance trips if they are errors
-    AND lpep_pickup_datetime >= '2025-11-01'
-    AND lpep_pickup_datetime < '2025-12-01'
-GROUP BY DATE(lpep_pickup_datetime)
-ORDER BY max_trip_distance DESC
+    DATE(lpep_pickup_datetime) AS pickup_day, 
+    MAX(trip_distance) AS max_trip_distance 
+FROM green_taxi_trips 
+WHERE trip_distance <= 100 
+  AND trip_distance > 0                     -- optional: exclude 0-distance trips if they are errors
+  AND lpep_pickup_datetime >= '2025-11-01' 
+  AND lpep_pickup_datetime < '2025-12-01' 
+GROUP BY DATE(lpep_pickup_datetime) 
+ORDER BY max_trip_distance DESC 
 LIMIT 1;
 
-Question 5. Biggest pickup zone
+```
+**Answer:**
+**➡️ Pickup day: 2025-11-14**
+**➡️ Max trip distance: 88.03 miles**
 
-Which was the pickup zone with the largest total_amount (sum of all trips) on November 18th, 2025?
+### Question 5. Biggest pickup zone
 
+**Question:** Which was the pickup zone with the largest total_amount (sum of all trips) on November 18th, 2025?
+
+```sql
 SELECT 
     tz."Zone" AS pickup_zone,
     ROUND(SUM(gt.total_amount)::numeric, 2) AS total_revenue_usd
@@ -44,12 +59,18 @@ GROUP BY tz."Zone"
 ORDER BY total_revenue_usd DESC
 LIMIT 1;
 
-Question 6. Largest tip
+```
+**Answer:**
+**➡️ Pickup zone: East Harlem North**
+**➡️ Total amount: $9286.40**
 
-For the passengers picked up in the zone named "East Harlem North" in November 2025, which was the drop off zone that had the largest tip?
+### Question 6. Largest tip
+
+**Question:** For the passengers picked up in the zone named "East Harlem North" in November 2025, which was the drop off zone that had the largest tip?
 
 Note: it's tip , not trip. We need the name of the zone, not the ID
 
+```sql
 SELECT 
     dz."Zone" AS dropoff_zone,
     ROUND(MAX(gt.tip_amount)::numeric, 2) AS max_tip_usd
@@ -62,3 +83,8 @@ WHERE gt."PULocationID" = 74                      -- faster if you know East Har
 GROUP BY dz."Zone"
 ORDER BY max_tip_usd DESC
 LIMIT 1;
+
+```
+**Answer:**
+**➡️ Drop-off zone: Yorkville West**
+**➡️ Largest tip: $81.89**
