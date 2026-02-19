@@ -78,7 +78,9 @@ Where applicable, answers are supported with **SQL queries** and **execution scr
      ```
 > _Screenshot proof below:_
 
-![External_yellow_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/03-Data-warehouse-Assignment/images/Module%203%20Assignment%20Creation%20of%20external%20table.PNG)
+![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Upload%20confirmation%20and%20combine%20table%20for%20yellow%20.PNG)
+![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Upload%20confirmation%20and%20combine%20table%20for%20green.PNG)
+![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Upload%20confirmation%20and%20combine%20table%20for%20fhv%20.PNG)
 
 
 3. **dbt cloud Setup and model creation**
@@ -86,7 +88,7 @@ Set up the dbt cloud and from the studio, creation of the various model was done
       ```
 > _Screenshot proof below:_
 
-![ny_taxi.yellow_tripdata_non_partitioned](https://github.com/favhenry/docker-workshop-2026/blob/main/03-Data-warehouse-Assignment/images/Module%203%20Assignment%20Creation%20of%20Materialized%20non%20partition%20table.PNG)
+![ Model dbt build](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/dbt%20model%20creation%20and%20build.PNG)
 
 ---
 
@@ -164,7 +166,7 @@ FROM {{ ref('fct_monthly_zone_revenue') }}
 
 > _Screenshot proof below:_
 
-![ny_taxi.yellow_tripdata_non_partitioned](https://github.com/favhenry/docker-workshop-2026/blob/main/03-Data-warehouse-Assignment/images/Module%203%20Assignment%20Question%203a%20Answer.PNG)
+![Query Proof](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Question%203.PNG)
 
 
 
@@ -196,7 +198,7 @@ LIMIT 1;
 
 > _Screenshot proof below:_
 
-![ny_taxi.yellow_tripdata_non_partitioned](https://github.com/favhenry/docker-workshop-2026/blob/main/03-Data-warehouse-Assignment/images/Module%203%20Assignment%20Question%204%20Answer.PNG)
+![ny_taxi.query proof](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Question%204.PNG)
 
 ---
 
@@ -216,6 +218,9 @@ WHERE service_type = 'Green'
   AND EXTRACT(MONTH FROM revenue_month) = 10;
 ```
 
+> _Screenshot proof below:_
+
+![ny_taxi.query proof](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Question%205.PNG)
 ---
 
 ## 6. Question 6. Build a Staging Model for FHV Data
@@ -279,8 +284,8 @@ FROM {{ ref('stg_fhv_tripdata') }};
 
 > _Screenshot proof below:_
 
-![ny_taxi.yellow_tripdata_non_partitioned](https://github.com/favhenry/docker-workshop-2026/blob/main/03-Data-warehouse-Assignment/images/Module%203%20Assignment%20Question%206a%20Answer.PNG)
-![ny_taxi.yellow_tripdata_non_partitioned](https://github.com/favhenry/docker-workshop-2026/blob/main/03-Data-warehouse-Assignment/images/Module%203%20Assignment%20Question%206b%20Answer.PNG)
+![ny_taxi.yellow_tripdata_non_partitioned](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Question%206a.PNG)
+![ny_taxi.yellow_tripdata_non_partitioned](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Question%206b.PNG)
 ---
 
 
