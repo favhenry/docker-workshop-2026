@@ -29,8 +29,8 @@ After setup, the pipeline processes NYC Taxi data and builds a full dependency g
 
 > _Screenshot proof below:_
 
-![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Upload%20confirmation%20and%20combine%20table%20for%20yellow%20.PNG)
-![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Upload%20confirmation%20and%20combine%20table%20for%20green.PNG)
+![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Module%205%20Successful%20run%20diagram.PNG)
+![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Module%205%20lineage%20diagram.PNG)
 
 
 
