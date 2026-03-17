@@ -60,8 +60,8 @@ This returns the installed Spark version.
 
 > _Screenshot proof below:_
 
-![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Module%205%20Successful%20run%20diagram.PNG)
-![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Module%205%20lineage%20diagram.PNG)
+![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/06-batch-processing/Images/Week%205%20Question%201.PNG)
+
 
 
 ---
@@ -96,8 +96,8 @@ This shows each file is approximately **25.33MB**.
 
 > _Screenshot proof below:_
 
-![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Module%205%20Successful%20run%20diagram.PNG)
-![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Module%205%20lineage%20diagram.PNG)
+![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/06-batch-processing/Images/Week%205%20Question%202.PNG)
+
 
 ---
 
@@ -129,8 +129,8 @@ This filters trips by pickup date and counts the records.
 
 > _Screenshot proof below:_
 
-![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Module%205%20Successful%20run%20diagram.PNG)
-![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Module%205%20lineage%20diagram.PNG)
+![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/06-batch-processing/Images/Week%205%20Question%203.PNG)
+
 
 ---
 
@@ -165,8 +165,8 @@ The maximum trip duration is approximately 90.6 hours.
 
 > _Screenshot proof below:_
 
-![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Module%205%20Successful%20run%20diagram.PNG)
-![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Module%205%20lineage%20diagram.PNG)
+![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/06-batch-processing/Images/Week%205%20Question%204.PNG)
+
 
 ---
 
@@ -189,8 +189,8 @@ This interface shows jobs, stages, tasks, and execution details.
 
 > _Screenshot proof below:_
 
-![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Module%205%20Successful%20run%20diagram.PNG)
-![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/04-Analytics%20Engineering/images/Module%205%20lineage%20diagram.PNG)
+![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/06-batch-processing/Images/Week%205%20Question%205.PNG)
+
 
 ---
 
@@ -230,5 +230,8 @@ least_frequent_zone = pickup_with_names.orderBy(col("trip_count").asc()).select(
 print(least_frequent_zone)
 
 ```
+> _Screenshot proof below:_
+
+![Data_tripdata](https://github.com/favhenry/docker-workshop-2026/blob/main/06-batch-processing/Images/Week%205%20Question%206%20.PNG)
 
 ---
